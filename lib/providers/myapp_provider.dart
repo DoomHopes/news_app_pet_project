@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 import 'package:news_app_pet_project/widgets/circular_progress_loading.dart';
+import 'package:news_app_pet_project/widgets/list_view_builder.dart';
 import 'dart:convert';
 
 import '../models/news_model.dart';
@@ -14,7 +15,7 @@ class MyAppProvider extends ChangeNotifier {
       getData(url);
       return const CircularProgressLoading();
     } else {
-      //return ListViewBuilder(listHome: workList);
+      return ListViewBuilder(listHome: workList);
     }
   }
 
