@@ -9,7 +9,31 @@ class ListViewBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('NewsApp'),
+        backgroundColor: Colors.amberAccent,
+      ),
+      body: ListView.builder(
+        itemCount: listHome.length,
+        itemBuilder: (context, index) {
+          return Card(
+            child: Column(
+              children: <Widget>[
+                ListTile(
+                  leading: Container(
+                    constraints: BoxConstraints.tightFor(width: 100.0),
+                    child: Image.network(
+                        listHome[index].articles[index].urlToImage),
+                  ),
+                  title: Text(listHome[index].articles[index].title),
+                  subtitle: Text(listHome[index].articles[index].description),
+                )
+              ],
+            ),
+          );
+        },
+      ),
+    );
   }
 }

@@ -9,8 +9,7 @@ import '../models/news_model.dart';
 class MyAppProvider extends ChangeNotifier {
   List<NewsModel> workList = [];
 
-  Widget listViewBuilder(
-      BuildContext context, List<NewsModel> list, String url) {
+  Widget listViewBuilder(BuildContext context, String url) {
     if (workList.isEmpty) {
       getData(url);
       return const CircularProgressLoading();
@@ -19,7 +18,7 @@ class MyAppProvider extends ChangeNotifier {
     }
   }
 
-  void getData(String url) async {
+  Future<List<NewsModel>> getData(String url) async {
     final response = await http.get(url);
 
     if (response.statusCode == 200) {
@@ -27,6 +26,7 @@ class MyAppProvider extends ChangeNotifier {
       final List<dynamic> listMap = jsonData;
       workList = addToList(listMap);
       notifyListeners();
+      return workList;
     } else {
       throw Exception('Failed to load data');
     }
