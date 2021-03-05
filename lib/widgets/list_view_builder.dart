@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
-
-import '../models/news_model.dart';
+import 'package:news_app_pet_project/models/articles.dart';
 
 class ListViewBuilder extends StatelessWidget {
   ListViewBuilder({Key key, @required this.listHome}) : super(key: key);
 
-  final List<NewsModel> listHome;
+  final List<Article> listHome;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      /* appBar: AppBar(
         title: Text('NewsApp'),
         backgroundColor: Colors.amberAccent,
-      ),
+      ),*/
       body: ListView.builder(
         itemCount: listHome.length,
         itemBuilder: (context, index) {
@@ -23,11 +22,10 @@ class ListViewBuilder extends StatelessWidget {
                 ListTile(
                   leading: Container(
                     constraints: BoxConstraints.tightFor(width: 100.0),
-                    child: Image.network(
-                        listHome[index].articles[index].urlToImage),
+                    child: Image.network(listHome[index].urlToImage),
                   ),
-                  title: Text(listHome[index].articles[index].title),
-                  subtitle: Text(listHome[index].articles[index].description),
+                  title: Text(listHome[index].title),
+                  subtitle: Text(listHome[index].description),
                 )
               ],
             ),
