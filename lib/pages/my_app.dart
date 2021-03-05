@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:news_app_pet_project/providers/myapp_provider.dart';
 
-import 'constants.dart';
+import '../constants.dart';
 
 class MyApp extends StatefulWidget {
   @override
@@ -15,12 +15,12 @@ class _MyAppPageState extends State<MyApp> {
   Widget build(BuildContext context) {
     return Consumer<MyAppProvider>(
       builder: (context, providerData, child) => Scaffold(
-        backgroundColor: Colors.amberAccent,
+        backgroundColor: Colors.white,
         appBar: AppBar(
           title: Text('NewsApp'),
         ),
         body: Visibility(
-          child: providerData.listViewBuilder(context, baseBusinessUrl),
+          child: providerData.listViewBuilder(context, bitCoin),
         ),
       ),
     );
