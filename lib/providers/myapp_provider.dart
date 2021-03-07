@@ -5,16 +5,22 @@ import 'package:news_app_pet_project/widgets/circular_progress_loading.dart';
 import 'package:news_app_pet_project/widgets/list_view_builder.dart';
 import 'dart:convert';
 
+import '../constants.dart';
+
 class MyAppProvider extends ChangeNotifier {
   List<Article> workList = [];
 
-  Widget listViewBuilder(BuildContext context, String url) {
+  Widget listViewBuilder(String url) {
     if (workList.isEmpty) {
       getReturnedListFromAPI(url);
       return const CircularProgressLoading();
     } else {
       return ListViewBuilder(listHome: workList);
     }
+  }
+
+  void updateWidget(String url) {
+    getReturnedListFromAPI(url);
   }
 
   Future<void> getReturnedListFromAPI(String url) async {
