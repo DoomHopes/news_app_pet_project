@@ -1,13 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:news_app_pet_project/pages/my_app.dart';
 import 'package:news_app_pet_project/providers/myapp_provider.dart';
-import 'package:provider/provider.dart';
 
 import '../constants.dart';
 
 class DrawerWidget extends StatelessWidget {
-  MyAppProvider providerData;
+  final MyAppProvider providerData;
 
   DrawerWidget(this.providerData);
 
@@ -77,6 +75,7 @@ class DrawerWidget extends StatelessWidget {
                 Navigator.pop(context);
               },
             ),
+            // you can add more ListTile
           ],
         ),
       ),

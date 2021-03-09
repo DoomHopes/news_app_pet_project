@@ -13,12 +13,12 @@ class NewsWidget extends StatelessWidget {
       this.title})
       : super(key: key);
 
-  String imageUrl;
-  String title;
-  String description;
-  String author;
-  String publishedAt;
-  String content;
+  final String imageUrl;
+  final String title;
+  final String description;
+  final String author;
+  final String publishedAt;
+  final String content;
 
   @override
   Widget build(BuildContext context) {

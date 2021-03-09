@@ -5,7 +5,7 @@ import 'package:webview_flutter/webview_flutter.dart';
 class WebViewWidget extends StatelessWidget {
   WebViewWidget({this.url});
 
-  String url;
+  final String url;
 
   @override
   Widget build(BuildContext context) {

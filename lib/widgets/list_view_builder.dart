@@ -11,53 +11,51 @@ class ListViewBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: ListView.builder(
-        itemCount: listHome.length,
-        itemBuilder: (context, index) {
-          String imageUrl = '';
-          if (listHome[index].urlToImage == null) {
-            imageUrl = imageNoDataUrl;
-          } else {
-            imageUrl = listHome[index].urlToImage;
-          }
+    return ListView.builder(
+      itemCount: listHome.length,
+      itemBuilder: (context, index) {
+        String imageUrl = '';
+        if (listHome[index].urlToImage == null) {
+          imageUrl = imageNoDataUrl;
+        } else {
+          imageUrl = listHome[index].urlToImage;
+        }
 
-          String url;
-          if (listHome[index].url == null) {
-            url = 'null';
-          } else {
-            url = listHome[index].url;
-          }
+        String url;
+        if (listHome[index].url == null) {
+          url = 'null';
+        } else {
+          url = listHome[index].url;
+        }
 
-          String title;
-          if (listHome[index].title == null) {
-            title = 'Нет названия :(';
-          } else {
-            title = listHome[index].title;
-          }
+        String title;
+        if (listHome[index].title == null) {
+          title = 'Нет названия :(';
+        } else {
+          title = listHome[index].title;
+        }
 
-          return Card(
-            child: Column(
-              children: <Widget>[
-                ListTile(
-                  leading: Container(
-                    constraints: BoxConstraints.tightFor(width: 80.0),
-                    child: Image.network(imageUrl),
-                  ),
-                  title: Text(title),
-                  onTap: () {
-                    showDialog(
-                        context: context,
-                        builder: (context) => WebViewWidget(
-                              url: url,
-                            ));
-                  },
-                )
-              ],
-            ),
-          );
-        },
-      ),
+        return Card(
+          child: Column(
+            children: <Widget>[
+              ListTile(
+                leading: Container(
+                  constraints: BoxConstraints.tightFor(width: 80.0),
+                  child: Image.network(imageUrl),
+                ),
+                title: Text(title),
+                onTap: () {
+                  showDialog(
+                      context: context,
+                      builder: (context) => WebViewWidget(
+                            url: url,
+                          ));
+                },
+              )
+            ],
+          ),
+        );
+      },
     );
   }
 }
