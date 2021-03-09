@@ -17,6 +17,11 @@ class MyAppProvider extends ChangeNotifier {
     }
   }
 
+  Widget searchListViewBuilder(String url) {
+    getReturnedListFromAPI(url);
+    return ListViewBuilder(listHome: workList);
+  }
+
   void updateWidget(String url) {
     getReturnedListFromAPI(url);
   }
