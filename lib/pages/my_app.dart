@@ -18,15 +18,14 @@ class _MyAppPageState extends State<MyApp> {
     return Consumer<MyAppProvider>(
       builder: (context, providerData, child) => Scaffold(
         backgroundColor: Colors.white,
-        drawer: DrawerWidget(providerData),
+        drawer: DrawerWidget(),
         appBar: AppBar(
           title: Text('NewsApp'),
           actions: <Widget>[
             IconButton(
               icon: Icon(Icons.search),
               onPressed: () {
-                showSearch(
-                    context: context, delegate: Search(provider: providerData));
+                showSearch(context: context, delegate: Search());
               },
             )
           ],

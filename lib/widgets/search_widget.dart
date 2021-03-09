@@ -6,10 +6,6 @@ import '../constants.dart';
 import 'web_view.dart';
 
 class Search extends SearchDelegate {
-  final MyAppProvider provider;
-
-  Search({this.provider});
-
   @override
   List<Widget> buildActions(BuildContext context) {
     return [
@@ -28,7 +24,6 @@ class Search extends SearchDelegate {
       icon: Icon(Icons.arrow_back),
       onPressed: () {
         close(context, null);
-        //provider.updateWidget(baseUkrUrl);
       },
     );
   }
