@@ -28,7 +28,7 @@ class Search extends SearchDelegate {
       icon: Icon(Icons.arrow_back),
       onPressed: () {
         close(context, null);
-        provider.updateWidget(baseUkrUrl);
+        //provider.updateWidget(baseUkrUrl);
       },
     );
   }
