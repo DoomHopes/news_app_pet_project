@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:news_app_pet_project/widgets/search.dart';
+import 'package:news_app_pet_project/widgets/search_widget.dart';
 import 'package:news_app_pet_project/widgets/drawer_widget.dart';
 import 'package:provider/provider.dart';
 import 'package:news_app_pet_project/providers/myapp_provider.dart';

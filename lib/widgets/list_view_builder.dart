@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_app_pet_project/models/articles.dart';
-import 'package:news_app_pet_project/widgets/web_view.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 import '../constants.dart';
 
@@ -45,11 +45,29 @@ class ListViewBuilder extends StatelessWidget {
                 ),
                 title: Text(title),
                 onTap: () {
-                  showDialog(
+                  showGeneralDialog(
+                      context: context,
+                      pageBuilder: (BuildContext buildContext,
+                          Animation<double> animation,
+                          Animation<double> secondaryAnimation) {
+                        return Wrap(
+                          children: <Widget>[
+                            Container(
+                              width: 600,
+                              height: 800,
+                              child: WebView(
+                                initialUrl: url,
+                                javaScriptMode: JavaScriptMode.disabled,
+                              ),
+                            )
+                          ],
+                        );
+                      });
+                  /*showDialog(
                       context: context,
                       builder: (context) => WebViewWidget(
                             url: url,
-                          ));
+                          ));*/
                 },
               )
             ],
