@@ -36,6 +36,13 @@ class ListViewBuilder extends StatelessWidget {
           title = listHome[index].title;
         }
 
+        String sourceName;
+        if (listHome[index].source.name == null) {
+          sourceName = 'Нет названия :(';
+        } else {
+          sourceName = listHome[index].source.name;
+        }
+
         return Card(
           child: Column(
             children: <Widget>[
@@ -51,7 +58,7 @@ class ListViewBuilder extends StatelessWidget {
                       pageBuilder: (BuildContext buildContext,
                           Animation<double> animation,
                           Animation<double> secondaryAnimation) {
-                        return WebViewContainer(url);
+                        return WebViewContainer(url, sourceName);
                       });
                 },
               )
