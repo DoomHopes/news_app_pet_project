@@ -30,7 +30,7 @@ class Search extends SearchDelegate {
     return Consumer<MyAppProvider>(
       builder: (context, providerData, child) => Visibility(
         child: providerData.searchListViewBuilder(
-            'https://newsapi.org/v2/everything?qInTitle=$query&pageSize=40&apiKey=7267b90112544bbc9212f981b3715b31'),
+            'https://newsapi.org/v2/everything?qInTitle=$query&sortBy=popularitypageSize=40&apiKey=7267b90112544bbc9212f981b3715b31'),
       ),
     );
   }

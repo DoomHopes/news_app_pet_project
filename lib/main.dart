@@ -21,6 +21,7 @@ class NewsApp extends StatelessWidget {
         locale: Locale('ru'),
         title: 'NewsApp',
         initialRoute: '/first',
+        debugShowCheckedModeBanner: false,
         routes: {
           '/first': (context) => MyApp(),
         },
