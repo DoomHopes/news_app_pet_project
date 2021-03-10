@@ -21,6 +21,7 @@ class _MyAppPageState extends State<MyApp> {
         drawer: DrawerWidget(),
         appBar: AppBar(
           title: Text('NewsApp'),
+          backgroundColor: Colors.amberAccent,
           actions: <Widget>[
             IconButton(
               icon: Icon(Icons.search),

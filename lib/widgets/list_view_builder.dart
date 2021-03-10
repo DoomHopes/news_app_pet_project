@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_app_pet_project/models/articles.dart';
+import 'package:news_app_pet_project/widgets/webview_container.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 import '../constants.dart';
@@ -50,10 +51,7 @@ class ListViewBuilder extends StatelessWidget {
                       pageBuilder: (BuildContext buildContext,
                           Animation<double> animation,
                           Animation<double> secondaryAnimation) {
-                        return WebView(
-                          initialUrl: url,
-                          javaScriptMode: JavaScriptMode.disabled,
-                        );
+                        return WebViewContainer(url);
                       });
                 },
               )
