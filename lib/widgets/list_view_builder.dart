@@ -17,7 +17,7 @@ class ListViewBuilder extends StatelessWidget {
       itemBuilder: (context, index) {
         String imageUrl = '';
         if (listHome[index].urlToImage == null) {
-          imageUrl = imageNoDataUrl;
+          imageUrl = imageNoData;
         } else {
           imageUrl = listHome[index].urlToImage;
         }
@@ -53,13 +53,10 @@ class ListViewBuilder extends StatelessWidget {
                 ),
                 title: Text(title),
                 onTap: () {
-                  showGeneralDialog(
-                      context: context,
-                      pageBuilder: (BuildContext buildContext,
-                          Animation<double> animation,
-                          Animation<double> secondaryAnimation) {
-                        return WebViewContainer(url, sourceName);
-                      });
+                  showDialog(
+                    context: context,
+                    child: WebViewContainer(url, sourceName),
+                  );
                 },
               )
             ],

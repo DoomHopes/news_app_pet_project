@@ -21,5 +21,4 @@ const String baseUkrUrl =
 const String bitCoin =
     'https://newsapi.org/v2/everything?q=bitcoin&pageSize=40&apiKey=7267b90112544bbc9212f981b3715b31';
 
-const String imageNoDataUrl =
-    'https://i.pinimg.com/originals/8a/eb/d8/8aebd875fbddd22bf3971c3a7159bdc7.png';
+const String imageNoData = 'lib/images/noImage.png';
