@@ -50,24 +50,11 @@ class ListViewBuilder extends StatelessWidget {
                       pageBuilder: (BuildContext buildContext,
                           Animation<double> animation,
                           Animation<double> secondaryAnimation) {
-                        return Wrap(
-                          children: <Widget>[
-                            Container(
-                              width: 600,
-                              height: 800,
-                              child: WebView(
-                                initialUrl: url,
-                                javaScriptMode: JavaScriptMode.disabled,
-                              ),
-                            )
-                          ],
+                        return WebView(
+                          initialUrl: url,
+                          javaScriptMode: JavaScriptMode.disabled,
                         );
                       });
-                  /*showDialog(
-                      context: context,
-                      builder: (context) => WebViewWidget(
-                            url: url,
-                          ));*/
                 },
               )
             ],
